@@ -1,0 +1,47 @@
+body {
+	margin: 5rem;
+	font-family: sans-serif;
+}
+
+.pre {
+	width: 90%;
+	white-space: pre-wrap;
+	color: darkGray;
+	font-family: monospace;
+}
+
+.pre .prop {
+	color: blue;
+}
+
+h2 {
+	font-family: monospace;
+}
+
+.pathparam {
+	color: darkGray;
+}
+
+.link {
+	color: blue;
+	font-family: monospace;
+}
+
+.api {
+	padding: 1rem;
+}
+
+.apidesc {
+	padding: 0 0 1rem 2rem;
+	font-size: 0.9rem;
+	margin-bottom: 1rem;
+	border-bottom: solid 1pt lightGray;
+}
+
+.success {
+	color: green;
+}
+
+.failure {
+	color: red;
+}
