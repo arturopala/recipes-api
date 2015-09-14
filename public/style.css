@@ -1,6 +1,8 @@
+@import url("//hello.myfonts.net/count/2dde59");
+
 body {
-	margin: 5rem;
-	font-family: sans-serif;
+	font-family: 'VAGRoundedLTPro-Light';
+	color: #383838;
 }
 
 a {
@@ -18,14 +20,26 @@ a {
 
 .prop {
 	color: blue;
+	font-family: monospace;
+}
+
+h1 {
+	border-bottom: 1px solid #ececec;
+	margin-top: 0;
 }
 
 h2 {
-	font-family: monospace;
+	margin-bottom: 0.3rem;
+}
+
+h2 .no {
+	font-size: 75%;
+	color: #ff5009;
 }
 
 .pathparam {
 	color: darkGray;
+	font-weight: normal;
 }
 
 .link {
@@ -34,14 +48,14 @@ h2 {
 }
 
 .api {
-	padding: 1rem;
+	padding: 0 1rem;
 }
 
 .apidesc {
-	padding: 0 0 1rem 2rem;
+	padding: 0 0 1rem 1.7rem;
 	font-size: 0.9rem;
 	margin-bottom: 1rem;
-	border-bottom: solid 1pt lightGray;
+	border-bottom: solid 1pt #ececec;
 }
 
 .success {
@@ -50,4 +64,16 @@ h2 {
 
 .failure {
 	color: red;
+}
+
+.logo-svg img {
+	position: relative;
+	top: 1.3rem;
+    height: 4rem;
+}
+
+.links {
+	float: right;
+	padding: 0 3rem;
+	font-weight: normal;
 }
