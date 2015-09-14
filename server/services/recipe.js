@@ -11,7 +11,7 @@ var RecipeService = {
 			task = task.select(selection);
 		}
 		task.exec(function(err,recipes){
-			if(err || !recipes) q.reject(err || "None recipes found"); else q.resolve(recipes);
+			if(err || !recipes) q.reject(err || "Not Found"); else q.resolve(recipes);
 		});
 		return q.promise;
 	},
@@ -19,7 +19,7 @@ var RecipeService = {
 	get: function(recipeId){
 		var q = Q.defer();
 		Recipe.findOne({"_id":recipeId}).exec(function(err,recipe){
-			if(err || !recipe) q.reject(err || "None recipes found"); else q.resolve(recipe);
+			if(err || !recipe) q.reject(err || "Not Found"); else q.resolve(recipe);
 		});
 		return q.promise;
 	},
@@ -30,7 +30,7 @@ var RecipeService = {
 			delete entity.__v;
 			var q = Q.defer();
 			Recipe.findOneAndUpdate({"_id":recipeId}, entity).exec(function (err, _entity) {
-				if(err) q.reject(err); else {
+				if(err || !_entity) q.reject(err || "Not Found"); else {
 					updateIngredientsAsync(_entity.ingredients);
 					q.resolve(_entity);
 				}
@@ -45,7 +45,7 @@ var RecipeService = {
 		if(recipe) {
 			var q = Q.defer();
 			recipe.save(function(err, saved){
-				if(err) q.reject(err); else {
+				if(err || !saved) q.reject(err || "Not Found"); else {
 					updateIngredientsAsync(saved.ingredients);
 					q.resolve(saved);
 				}
@@ -59,8 +59,8 @@ var RecipeService = {
 	remove: function(recipeId){
 		if(recipeId) {
 			var q = Q.defer();
-			Recipe.remove({"_id":recipeId}).exec(function(err, saved){
-				if(err) q.reject(err); else q.resolve(saved);
+			Recipe.remove({"_id":recipeId}).exec(function(err, result){
+				if(err) q.reject(err); else q.resolve(result);
 			});
 			return q.promise;
 		} else return Q.fcall(function () {

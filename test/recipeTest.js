@@ -102,6 +102,32 @@ describe('Recipe Api tests', function() {
         });
     });
 
+});
 
+describe('Recipe Api error code tests', function() {
+    it('- GET /api/recipes/foo should return 400 Bad Request', function(done){
+        request(app).get('/api/recipes/foo')
+        .send()
+        .end(function(err, res){
+            if(err){
+                done(err);
+            } else {
+                res.status.should.be.equal(400);
+                done();
+            }
+        });
+    });
 
+    it('- GET /api/recipes/55f2d43a33cdf8490d0e627a should return 404 Not Found', function(done){
+        request(app).get('/api/recipes/55f2d43a33cdf8490d0e627a')
+        .send()
+        .end(function(err, res){
+            if(err){
+                done(err);
+            } else {
+                res.status.should.be.equal(404);
+                done();
+            }
+        });
+    });
 });

@@ -4,8 +4,12 @@ var Utils = {
 
 	handleError: function(response){
 		return function(err){
-	      	if(err && err.errmsg) {
-	      		response.status(400).send(err.errmsg);
+	      	if(err) {
+	      		if(err === "Not Found"){
+					response.status(404).send();
+	      		} else {
+	      			response.status(400).send(err.errmsg || "");
+	      		}
 	      	} else {
 	      		response.status(500).send();
 	      	}
