@@ -10,7 +10,15 @@ var Utils = {
 	      		response.status(500).send();
 	      	}
 	    }
-	}
+	},
+
+	hasProperty: function(key,value){ return function(element, index, array) {
+	  return (element[key] && element[key] === value);
+	}},
+
+	hasNotProperty: function(key,value){ return function(element, index, array) {
+	  return (element[key] && element[key] !== value);
+	}}
 
 }
 

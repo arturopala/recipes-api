@@ -38,14 +38,6 @@ router.post('/recipes/:recipeId/photos', upload.single('recipePhoto'), function 
   }
 });
 
-var hasProperty = function(key,value){ return function(element, index, array) {
-  return (element[key] && element[key] === value);
-}};
-
-var hasNotProperty = function(key,value){ return function(element, index, array) {
-  return (element[key] && element[key] !== value);
-}};
-
 router.get('/recipes/:recipeId/photos/:photoId', function(req, res) {
   var recipeId = req.params.recipeId;
   var photoId = req.params.photoId;
@@ -53,7 +45,7 @@ router.get('/recipes/:recipeId/photos/:photoId', function(req, res) {
   RecipeService.get(recipeId)
   .then(
       function(recipe){
-        var photos = recipe.photos.filter(hasProperty('photoId',photoId));
+        var photos = recipe.photos.filter(U.hasProperty('photoId',photoId));
         if(photos && photos[0]){
           var photo = photos[0];
           thisRes.sendFile(photo.photoId,{"root": storagePath, "headers": {"Content-Type": photo.type || "image/jpeg"}});
@@ -71,7 +63,7 @@ router['delete']('/recipes/:recipeId/photos/:photoId', function(req, res) {
   RecipeService.get(recipeId)
   .then(
       function(recipe){
-        var photos = recipe.photos.filter(hasNotProperty('photoId',photoId));
+        var photos = recipe.photos.filter(U.hasNotProperty('photoId',photoId));
         recipe.photos = photos;
         RecipeService.update(recipeId, recipe)
         .then(

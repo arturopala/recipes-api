@@ -1,5 +1,5 @@
 var Recipe = require('../models/recipe');
-var Ingredient = require('../models/ingredient');
+var IngredientService = require('./ingredient');
 var Q = require("q")
 
 var RecipeService = {
@@ -71,25 +71,8 @@ var RecipeService = {
 
 var updateIngredientsAsync = function(ingredients){
 	ingredients.forEach(function(item){
-		if(!item.unit) item.unit = "pcs.";
-		Ingredient.findOne({"name": item.name}).exec(function (err, ingredient) {
-			if(!err){
-				if(ingredient){
-					var unitnotexistsyet = ingredient.units.filter(function(unit){return unit === item.unit}).length==0;
-					if(unitnotexistsyet){
-						ingredient.units.push(item.unit);
-						ingredient.save(function(err, saved){});
-						console.log("Updated ingredient "+JSON.stringify(ingredient));
-					}
-				} else {
-					var ingredient = new Ingredient({"name":item.name,"units":[item.unit]});
-					ingredient.save(function(err, saved){});
-					console.log("Added new ingredient "+JSON.stringify(ingredient));
-				}
-			} else {
-				console.log(err);
-			}
-		});
+		if( !item.unit ) item.unit = "pcs.";
+		IngredientService.add(item);
 	});
 }
 
