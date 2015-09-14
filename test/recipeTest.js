@@ -25,7 +25,7 @@ describe('Recipe Api tests', function() {
             }
         });
         return q.promise;
-    }
+    };
 
     it('- POST /api/recipes/ should create new recipe and return item link back', function(done){
         createRecipe()
@@ -56,7 +56,7 @@ describe('Recipe Api tests', function() {
         });
     });
 
-    it('- GET /api/recipes/{UID} should get recipe as json', function(done){
+    it('- GET /api/recipes/{RECIPE_ID} should get recipe as json', function(done){
         createRecipe()
         .then(
             function(result){
