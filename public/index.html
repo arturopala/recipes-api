@@ -10,9 +10,9 @@
     <a href="https://www.getpostman.com/collections/a71a45c5b668530f10ce">Postman collection url: https://www.getpostman.com/collections/a71a45c5b668530f10ce</a>
     </div>
     <div class="api">
-      <h2>1. GET /api/recipes/</h2>
+      <h2>A1. GET /api/recipes/</h2>
       <div class="apidesc">Recipes listing, can be used with ?s= query parameter to select resulting object's fields, ex: <span class="link">/api/recipes/?s=title+minutes</span></div>
-      <h2>2. POST /api/recipes/</h2>
+      <h2>A2. POST /api/recipes/</h2>
       <div class="apidesc">
         Creates new recipe, <b><i>title</i> must be unique</b>
         <br><br>
@@ -37,15 +37,15 @@
         <br>
         New <span class="pathparam">RECIPE_ID</span> can be parsed from returned <span class="prop">Link</span> header.
       </div>
-      <h2>3. GET /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
+      <h2>A3. GET /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
       <div class="apidesc">Gets recipe by its unique id</div>
-      <h2>4. PUT /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
+      <h2>A4. PUT /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
       <div class="apidesc">Updates recipe by id</div>
-      <h2>5. DELETE /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
+      <h2>A5. DELETE /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
       <div class="apidesc">Removes recipe by id</div>
     </div>
     <div class="api">
-      <h2>6. POST /api/recipes/<span class="pathparam">{RECIPE_ID}</span>/photos</h2>
+      <h2>B1. POST /api/recipes/<span class="pathparam">{RECIPE_ID}</span>/photos</h2>
       <div class="apidesc">
         Uploads new photo for recipe. 
         Expects content type 'multipart/form-data' and 2 body parts: 
@@ -56,10 +56,28 @@
         <br>
         New <span class="pathparam">PHOTO_ID</span> can be parsed from returned <span class="prop">Link</span> header.
       </div>
-      <h2>7. GET /api/recipes/<span class="pathparam">{RECIPE_ID}</span>/photos/<span class="pathparam">{PHOTO_ID}</span></h2>
+      <h2>B2. GET /api/recipes/<span class="pathparam">{RECIPE_ID}</span>/photos/<span class="pathparam">{PHOTO_ID}</span></h2>
       <div class="apidesc">Gets recipe's photo</div>
-      <h2>8. DELETE /api/recipes/<span class="pathparam">{RECIPE_ID}</span>/photos/<span class="pathparam">{PHOTO_ID}</span></h2>
+      <h2>B3. DELETE /api/recipes/<span class="pathparam">{RECIPE_ID}</span>/photos/<span class="pathparam">{PHOTO_ID}</span></h2>
       <div class="apidesc">Removes photo from recipe</div>
+    </div>
+    <div class="api">
+      <h2>C1. GET /api/ingredients/</h2>
+      <div class="apidesc">
+        Lists all unique ingredients an theirs possible units.
+        <br><br>
+        Example response:
+        <div class="pre">
+[
+  {<span class="prop">"name"</span>:"mięso wieprzowe",<span class="prop">"units"</span>:["g"]},
+  {<span class="prop">"name"</span>:"olej",<span class="prop">"units"</span>:["łyżka"]},
+  {<span class="prop">"name"</span>:"papryka",<span class="prop">"units"</span>:["pcs."]},
+  {<span class="prop">"name"</span>:"Fix Knorr Kebab z dipem czosnkowym",<span class="prop">"units"</span>:["pcs."]},
+  {<span class="prop">"name"</span>:"cebula",<span class="prop">"units"</span>:["pcs."]},
+  {<span class="prop">"name"</span>:"boczek wędzony",<span class="prop">"units"</span>:["g"]},
+  {<span class="prop">"name"</span>:"patyczki",<span class="prop">"units"</span>:["pcs."]}
+]</div>
+      </div>
     </div>
   </body>
 </html>

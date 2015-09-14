@@ -49,3 +49,4 @@ Postman collection: <https://www.getpostman.com/collections/a71a45c5b668530f10ce
 #### POST /api/recipes/{RECIPE_ID}/photos
 #### GET /api/recipes/{RECIPE_ID}/photos/{PHOTO_ID}
 #### DELETE /api/recipes/{RECIPE_ID}/photos/{PHOTO_ID}
+#### GET /api/ingredients/
