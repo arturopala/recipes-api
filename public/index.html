@@ -13,6 +13,9 @@
         </div>
     </h1>
     <div class="api">
+    Simple REST service providing working API for demo applications written by interviewed front-end developers.
+    </div>
+    <div class="api">
       <h2><span class="no">A1</span> GET /api/recipes/</h2>
       <div class="apidesc">Recipes listing, can be used with ?s= query parameter to select resulting object's fields, ex: <span class="link">/api/recipes/?s=title+minutes</span></div>
       <h2><span class="no">A2</span> POST /api/recipes/</h2>
@@ -41,7 +44,72 @@
         New <span class="pathparam">RECIPE_ID</span> can be parsed from returned <span class="prop">Link</span> header.
       </div>
       <h2><span class="no">A3</span> GET /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
-      <div class="apidesc">Gets recipe by its unique id</div>
+      <div class="apidesc">
+      Gets recipe by its unique id
+      <br><br>
+      Example response:
+      <div class="pre">
+        {
+            <span class="prop">"_id"</span>: "55f6c228b3122642106c08fc",
+            <span class="prop">"title"</span>: "Szaszłyki a’la kebab",
+            <span class="prop">"minutes"</span>: 20,
+            <span class="prop">"description"</span>: "Mięso, cebulę i paprykę pokrój w grubą kostkę, a boczek w kostkę 2 cm x 0,5 cm. Fix Knorr (duża saszetka) wymieszaj z olejem i zamarynuj mięso. Kawałki mięsa nakładaj na patyki na przemian z warzywami. Szaszłyki obsmaż na patelni z obu stron a następnie piecz w piekarniku nagrzanym do 240 stopni przez 30 minut. Sos czosnkowy (mała saszetka) wymieszaj z jogurtem. Podawaj z szaszłykami.Moim zdaniem szaszłyki można piec w nieco niższej temperaturze, ale trochę dłużej. Mięso będzie bardziej soczyste. Moja rada jak uzyskać chrupiące warzywa i aromatyczne mięso to marynowanie składników dzień wcześniej i pozostawienie w lodówce do momentu gotowania. Moim kulinarnym zaskoczeniem jest cebula marynowana po prostu w occie winnym. Daje wyjątkowy smak na grillu. Paprykę natomiast warto umieszczać w środku szaszłyka, tak aby mogła przyjąć smak mięsa i przypraw. Koniec i początek szpady szaszłykowej zarezerwujcie dla boczku. Nasz Knorr Fix Kebab z dipem czosnkowym to nieskomplikowany pomysł na nadchodzący sezon grillowy. Musztardę i keczup wszyscy dobrze znamy. Teraz czas na dip czosnkowy. Wspominałem już o polędwiczkach wieprzowych. Może trochę zbyt nadużywane w ostatnich czasach, ale moim zdaniem to bardzo dobre mięso. Chude, miękkie, dobrze komponuje się z wieloma dodatkami. No i, co szczególnie ważne, bardzo łatwe do przygotowania. Na domowy obiad w ciągu tygodnia polecam eskalopki z mozzarellą.",
+            <span class="prop">"tags"</span>: [],
+            <span class="prop">"photos"</span>: [
+              {
+                <span class="prop">"photoId"</span>: "51b7c60c8714d00b8c162a2605544be3",
+                <span class="prop">"title"</span>: "Propozycja podania szaszłyka",
+                <span class="prop">"type"</span>: "image/jpeg",
+                <span class="prop">"size"</span>: 248032
+              },
+              {
+                <span class="prop">"photoId"</span>: "21218576ae0610ed3ea1787cca87d025",
+                <span class="prop">"title"</span>: "Propozycja podania szaszłyka",
+                <span class="prop">"type"</span>: "image/jpeg",
+                <span class="prop">"size"</span>: 248032
+              },
+              {
+                <span class="prop">"photoId"</span>: "abfafc7ebdad5f5e3a86e37e1124f75c",
+                <span class="prop">"title"</span>: "Propozycja podania szaszłyka",
+                <span class="prop">"type"</span>: 248032
+              }
+            ],
+            <span class="prop">"ingredients"</span>: [
+              {
+                <span class="prop">"name"</span>: "mięso wieprzowe",
+                <span class="prop">"unit"</span>: "g",
+                <span class="prop">"quantity"</span>: 400,
+                <span class="prop">"comment"</span>: "np. karkówka"
+              },
+              {
+                <span class="prop">"name"</span>: "Fix Knorr Kebab z dipem czosnkowym"
+              },
+              {
+                <span class="prop">"name"</span>: "boczek wędzony",
+                <span class="prop">"unit"</span>: "g",
+                <span class="prop">"quantity"</span>: 200
+              },
+              {
+                <span class="prop">"name"</span>: "papryka",
+                <span class="prop">"quantity"</span>: 1
+              },
+              {
+                <span class="prop">"name"</span>: "cebula",
+                <span class="prop">"quantity"</span>: 2
+              },
+              {
+                <span class="prop">"name"</span>: "olej",
+                <span class="prop">"unit"</span>: "łyżka",
+                <span class="prop">"quantity"</span>: 4
+              },
+              {
+                <span class="prop">"name"</span>: "patyczki",
+                <span class="prop">"comment"</span>: "kilka sztuk"
+              }
+            ]
+        }
+      </div>
+      </div>
       <h2><span class="no">A4</span> PUT /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
       <div class="apidesc">Updates recipe by id</div>
       <h2><span class="no">A5</span> DELETE /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
