@@ -3,6 +3,12 @@ body {
 	font-family: sans-serif;
 }
 
+a {
+	font-family: monospace;
+	font-size: 0.9rem;
+	color: blue;
+}
+
 .pre {
 	width: 90%;
 	white-space: pre-wrap;
@@ -10,7 +16,7 @@ body {
 	font-family: monospace;
 }
 
-.pre .prop {
+.prop {
 	color: blue;
 }
 

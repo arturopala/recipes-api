@@ -21,16 +21,16 @@ router.post('/recipes/', function(req, res) {
   var recipe = Recipe(req.body);
   var thisRes = res;
   recipe.validate(function (err) {
-	if(err) {
-		thisRes.status(400).send("Invalid recipe has been sent.");
-	} else {
-		RecipeService.store(recipe)
-		.then(
-	      function(entity){
-	        thisRes.status(201).header("Link",'</api/recipes/'+entity._id+'>; rel="created_item"; media=application/json').send();
-	      }, U.handleError(thisRes))
-	    .done();
-	}
+  	if(err) {
+  		thisRes.status(400).send("Invalid recipe has been sent.");
+  	} else {
+  		RecipeService.store(recipe)
+  		.then(
+  	      function(entity){
+  	        thisRes.status(201).header("Link",'</api/recipes/'+entity._id+'>; rel="created_item"; media=application/json').send();
+  	      }, U.handleError(thisRes))
+  	    .done();
+  	}
   });
 });
 

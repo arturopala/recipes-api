@@ -18,7 +18,9 @@ var recipeSchema = new mongoose.Schema({
     "photos": [
         {
             "photoId": {type: String},
-            "title": {type: String}
+            "title": {type: String},
+            "type": {type: String},
+            "size": {type: Number}
         }
     ]
 });

@@ -6,12 +6,15 @@
   </head>
   <body ng-app="app">
     <h1>Siili Recipes API</h1>
+    <div>
+    <a href="https://www.getpostman.com/collections/a71a45c5b668530f10ce">Postman collection url: https://www.getpostman.com/collections/a71a45c5b668530f10ce</a>
+    </div>
     <div class="api">
-      <h2>GET /api/recipes/</h2>
+      <h2>1. GET /api/recipes/</h2>
       <div class="apidesc">Recipes listing, can be used with ?s= query parameter to select resulting object's fields, ex: <span class="link">/api/recipes/?s=title+minutes</span></div>
-      <h2>POST /api/recipes/</h2>
+      <h2>2. POST /api/recipes/</h2>
       <div class="apidesc">
-        Create new recipe, <b><i>title</i> must be unique</b>
+        Creates new recipe, <b><i>title</i> must be unique</b>
         <br><br>
         Example payload:
         <div class="pre">
@@ -31,13 +34,32 @@
         }
         </div>
         Returns: <span class="success">201 Created</span> when success or <span class="failure">400 Bad Request</span> when recipe invalid or non-unique
+        <br>
+        New <span class="pathparam">RECIPE_ID</span> can be parsed from returned <span class="prop">Link</span> header.
       </div>
-      <h2>GET /api/recipies/<span class="pathparam">{ID}</span></h2>
-      <div class="apidesc">Get recipe by its unique id</div>
-      <h2>PUT /api/recipies/<span class="pathparam">{ID}</span></h2>
-      <div class="apidesc">Update recipe by id</div>
-      <h2>DELETE /api/recipies/<span class="pathparam">{ID}</span></h2>
-      <div class="apidesc">Remove recipe by id</div>
+      <h2>3. GET /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
+      <div class="apidesc">Gets recipe by its unique id</div>
+      <h2>4. PUT /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
+      <div class="apidesc">Updates recipe by id</div>
+      <h2>5. DELETE /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
+      <div class="apidesc">Removes recipe by id</div>
+    </div>
+    <div class="api">
+      <h2>6. POST /api/recipes/<span class="pathparam">{RECIPE_ID}</span>/photos</h2>
+      <div class="apidesc">
+        Uploads new photo for recipe. 
+        Expects content type 'multipart/form-data' and 2 body parts: 
+        <ul>
+        <li><span class="prop">recipePhoto</span> containing image bytes in jpeg or png format
+        <li>(optional) <span class="prop">recipePhotoTitle</span> with image title text
+        </ul>
+        <br>
+        New <span class="pathparam">PHOTO_ID</span> can be parsed from returned <span class="prop">Link</span> header.
+      </div>
+      <h2>7. GET /api/recipes/<span class="pathparam">{RECIPE_ID}</span>/photos/<span class="pathparam">{PHOTO_ID}</span></h2>
+      <div class="apidesc">Gets recipe's photo</div>
+      <h2>8. DELETE /api/recipes/<span class="pathparam">{RECIPE_ID}</span>/photos/<span class="pathparam">{PHOTO_ID}</span></h2>
+      <div class="apidesc">Removes photo from recipe</div>
     </div>
   </body>
 </html>

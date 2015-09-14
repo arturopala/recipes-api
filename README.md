@@ -1,6 +1,6 @@
 # Siili Recipes API
 
-Simple REST service providing working api for demo applications to-be-written by interviewed front-end developers.
+Simple REST service providing working API for demo applications to-be-written by interviewed front-end developers.
 
 #### installing dependencies
 
@@ -22,6 +22,8 @@ npm start
 
 ## API
 
+Postman collection: <https://www.getpostman.com/collections/a71a45c5b668530f10ce>
+
 #### GET /
 #### GET /api/recipes/
 #### POST /api/recipes/
@@ -41,6 +43,9 @@ npm start
      ]
 }
 
-#### GET /api/recipies/{ID}
-#### PUT /api/recipies/{ID}
-#### DELETE /api/recipies/{ID}
+#### GET /api/recipes/{RECIPE_ID}
+#### PUT /api/recipes/{RECIPE_ID}
+#### DELETE /api/recipes/{RECIPE_ID}
+#### POST /api/recipes/{RECIPE_ID}/photos
+#### GET /api/recipes/{RECIPE_ID}/photos/{PHOTO_ID}
+#### DELETE /api/recipes/{RECIPE_ID}/photos/{PHOTO_ID}

@@ -4,15 +4,16 @@ var http = require('http'),
     logger = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
-    mongoose = require ("mongoose");
+    mongoose = require ("mongoose"),
+    multer  = require('multer');
 
 var app = express();
 var port = Number(process.env.PORT || 3000);
 
 var errorHandler = function(err, req, res, next) {
     if(!err) return next();
-    console.log("error!!!", err);
-    res.send("error!!!");
+    console.log("[ERROR] ", err);
+    res.status(500).send("Unexpected error ocurred!");
 };
 
 app.set('port', port);
@@ -39,10 +40,12 @@ app.use(logger('tiny'));
 // App Routes
 var routes = require('./routes/index');
 var recipes = require('./routes/recipes');
+var recipePhotos = require('./routes/recipePhotos');
 
 // App use
 app.use("/",routes);
 app.use("/api/", recipes);
+app.use("/api/", recipePhotos);
 
 //app.use(errorHandler);
 if (!module.parent) {

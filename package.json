@@ -12,6 +12,7 @@
     "express": "^4.13.3",
     "mongoose": "^4.1.6",
     "morgan": "^1.6.1",
+    "multer": "^1.0.3",
     "q": "^1.4.1"
   },
   "devDependencies": {
