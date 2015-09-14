@@ -13,7 +13,6 @@ var port = Number(process.env.PORT || 3000);
 var errorHandler = function(err, req, res, next) {
     if(!err) return next();
     console.log("[ERROR] ", err);
-    res.status(500).send("Unexpected error ocurred!");
 };
 
 app.set('port', port);
@@ -41,11 +40,13 @@ app.use(logger('tiny'));
 var routes = require('./routes/index');
 var recipes = require('./routes/recipes');
 var recipePhotos = require('./routes/recipePhotos');
+var ingredients = require('./routes/ingredients');
 
 // App use
 app.use("/",routes);
 app.use("/api/", recipes);
 app.use("/api/", recipePhotos);
+app.use("/api/", ingredients);
 
 //app.use(errorHandler);
 if (!module.parent) {

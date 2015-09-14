@@ -18,7 +18,7 @@ router.post('/recipes/:recipeId/photos', upload.single('recipePhoto'), function 
   var thisRes = res;
   if(!req.file) {
     thisRes.status(400).send("File part 'recipePhoto' is missing!");
-  } else if(req.file.mimetype !== 'image/jpeg' || req.file.mimetype !== 'image/png') {
+  } else if(req.file.mimetype !== 'image/jpeg' && req.file.mimetype !== 'image/png') {
     thisRes.status(400).send("Image type should be jpeg or png!");
   } else {
     var filename = req.file.filename;
