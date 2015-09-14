@@ -2,6 +2,8 @@
 
 Simple REST service providing working API for demo applications to-be-written by interviewed front-end developers.
 
+Try it on Heroku: <https://pure-falls-5036.herokuapp.com/>
+
 #### installing dependencies
 
 ```

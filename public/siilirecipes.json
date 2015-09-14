@@ -1,0 +1,424 @@
+{
+	"id": "b779183d-4ab0-3e4b-5ac6-36376e9bf784",
+	"name": "siilirecipes",
+	"description": "",
+	"order": [
+		"3d2f2493-f9ff-2fa1-c1f5-6260ba9cf218",
+		"f1446b53-120a-99d3-cfa0-2111146d9def",
+		"773cce1a-cbf9-f3b1-542b-2f85e04ec296",
+		"59984232-3622-a0d2-9520-fffe9c2adc79",
+		"4721b859-9fcf-77a9-cc95-c6f199d6d4af",
+		"fd025171-2a29-6a06-3e2d-22812a89c65c",
+		"8585ccd9-7ff9-4b59-d973-f624d74a0183",
+		"9802eb3d-ec07-95b9-2c6d-0e07fd3bf535",
+		"c519b75e-b49d-bbe8-5f60-6ef2f239c903"
+	],
+	"folders": [],
+	"timestamp": 1441968651941,
+	"owner": "36169",
+	"remoteLink": "https://www.getpostman.com/collections/a71a45c5b668530f10ce",
+	"public": false,
+	"requests": [
+		{
+			"id": "3d2f2493-f9ff-2fa1-c1f5-6260ba9cf218",
+			"headers": "Accept: application/json\n",
+			"url": "{{recipes_url}}/api/recipes/",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "recipePhoto",
+					"value": "szaszlyki-a-la-kebab.jpg",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "recipePhotoTitle",
+					"value": "Propozycja podania szaszłyka",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1442242064416,
+			"name": "list recipes",
+			"description": "",
+			"collectionId": "b779183d-4ab0-3e4b-5ac6-36376e9bf784",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 74,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "2160",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Fri, 11 Sep 2015 11:16:09 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"870-h3P0GzpgTEPuE0ZE0SPfGA\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "X-Powered-By",
+							"key": "X-Powered-By",
+							"value": "Express",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "[{\"_id\":\"55f2b79e079195670127205d\",\"title\":\"Szaszłyki a’la kebab\",\"minutes\":20,\"description\":\"Mięso, cebulę i paprykę pokrój w grubą kostkę, a boczek w kostkę 2 cm x 0,5 cm. Fix Knorr (duża saszetka) wymieszaj z olejem i zamarynuj mięso. Kawałki mięsa nakładaj na patyki na przemian z warzywami. Szaszłyki obsmaż na patelni z obu stron a następnie piecz w piekarniku nagrzanym do 240 stopni przez 30 minut. Sos czosnkowy (mała saszetka) wymieszaj z jogurtem. Podawaj z szaszłykami.Moim zdaniem szaszłyki można piec w nieco niższej temperaturze, ale trochę dłużej. Mięso będzie bardziej soczyste. Moja rada jak uzyskać chrupiące warzywa i aromatyczne mięso to marynowanie składników dzień wcześniej i pozostawienie w lodówce do momentu gotowania. Moim kulinarnym zaskoczeniem jest cebula marynowana po prostu w occie winnym. Daje wyjątkowy smak na grillu. Paprykę natomiast warto umieszczać w środku szaszłyka, tak aby mogła przyjąć smak mięsa i przypraw. Koniec i początek szpady szaszłykowej zarezerwujcie dla boczku. Nasz Knorr Fix Kebab z dipem czosnkowym to nieskomplikowany pomysł na nadchodzący sezon grillowy. Musztardę i keczup wszyscy dobrze znamy. Teraz czas na dip czosnkowy. Wspominałem już o polędwiczkach wieprzowych. Może trochę zbyt nadużywane w ostatnich czasach, ale moim zdaniem to bardzo dobre mięso. Chude, miękkie, dobrze komponuje się z wieloma dodatkami. No i, co szczególnie ważne, bardzo łatwe do przygotowania. Na domowy obiad w ciągu tygodnia polecam eskalopki z mozzarellą.\",\"photos\":[],\"ingredients\":[{\"name\":\"mięso wieprzowe\",\"unit\":\"g\",\"quantity\":400,\"comment\":\"np. karkówka\",\"_id\":\"55f2b79e0791956701272064\"},{\"name\":\"Fix Knorr Kebab z dipem czosnkowym\",\"_id\":\"55f2b79e0791956701272063\"},{\"name\":\"boczek wędzony\",\"unit\":\"g\",\"quantity\":200,\"_id\":\"55f2b79e0791956701272062\"},{\"name\":\"papryka\",\"quantity\":1,\"_id\":\"55f2b79e0791956701272061\"},{\"name\":\"cebula\",\"quantity\":2,\"_id\":\"55f2b79e0791956701272060\"},{\"name\":\"olej\",\"unit\":\"łyżka\",\"quantity\":4,\"_id\":\"55f2b79e079195670127205f\"},{\"name\":\"patyczki\",\"comment\":\"kilka sztuk\",\"_id\":\"55f2b79e079195670127205e\"}]}]",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "1b2fc537-cf1c-dc49-d658-666a38847ce5",
+					"name": "single recipe",
+					"request": {
+						"name": "list recipes",
+						"description": "",
+						"url": "http://localhost:3000/api/recipes/",
+						"pathVariables": {},
+						"data": [],
+						"headers": "Accept: application/json\n",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "",
+						"isFromCollection": true,
+						"version": 2
+					}
+				}
+			]
+		},
+		{
+			"id": "4721b859-9fcf-77a9-cc95-c6f199d6d4af",
+			"headers": "",
+			"url": "{{recipes_url}}/api/recipes/55f2b79e079195670127205d",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1442242113116,
+			"name": "remove recipe by id",
+			"description": "",
+			"collectionId": "b779183d-4ab0-3e4b-5ac6-36376e9bf784",
+			"responses": []
+		},
+		{
+			"id": "59984232-3622-a0d2-9520-fffe9c2adc79",
+			"headers": "Content-Type: application/json\n",
+			"url": "{{recipes_url}}/api/recipes/55f2d43a33cdf8490d0e6270",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1442242106921,
+			"name": "edit recipe",
+			"description": "",
+			"collectionId": "b779183d-4ab0-3e4b-5ac6-36376e9bf784",
+			"responses": [],
+			"rawModeData": "{\n    \"title\":\"Szaszłyki a’la kebab\",\n    \"minutes\": \"10\",\n    \"description\":\"Mięso, cebulę i paprykę pokrój w grubą kostkę, a boczek w kostkę 2 cm x 0,5 cm. Fix Knorr (duża saszetka) wymieszaj z olejem i zamarynuj mięso. Kawałki mięsa nakładaj na patyki na przemian z warzywami. Szaszłyki obsmaż na patelni z obu stron a następnie piecz w piekarniku nagrzanym do 240 stopni przez 30 minut. Sos czosnkowy (mała saszetka) wymieszaj z jogurtem. Podawaj z szaszłykami.Moim zdaniem szaszłyki można piec w nieco niższej temperaturze, ale trochę dłużej. Mięso będzie bardziej soczyste. Moja rada jak uzyskać chrupiące warzywa i aromatyczne mięso to marynowanie składników dzień wcześniej i pozostawienie w lodówce do momentu gotowania. Moim kulinarnym zaskoczeniem jest cebula marynowana po prostu w occie winnym. Daje wyjątkowy smak na grillu. Paprykę natomiast warto umieszczać w środku szaszłyka, tak aby mogła przyjąć smak mięsa i przypraw. Koniec i początek szpady szaszłykowej zarezerwujcie dla boczku. Nasz Knorr Fix Kebab z dipem czosnkowym to nieskomplikowany pomysł na nadchodzący sezon grillowy. Musztardę i keczup wszyscy dobrze znamy. Teraz czas na dip czosnkowy. Wspominałem już o polędwiczkach wieprzowych. Może trochę zbyt nadużywane w ostatnich czasach, ale moim zdaniem to bardzo dobre mięso. Chude, miękkie, dobrze komponuje się z wieloma dodatkami. No i, co szczególnie ważne, bardzo łatwe do przygotowania. Na domowy obiad w ciągu tygodnia polecam eskalopki z mozzarellą.\",\n    \"ingredients\":[\n        {\"name\":\"mięso wieprzowe\", \"unit\":\"g\", \"quantity\":400, \"comment\":\"np. karkówka\"},\n        {\"name\":\"Fix Knorr Kebab z dipem czosnkowym\"},\n        {\"name\":\"boczek wędzony\", \"unit\":\"g\", \"quantity\":200},\n        {\"name\":\"papryka\", \"quantity\":1},\n        {\"name\":\"cebula\", \"quantity\":2},\n        {\"name\":\"olej\", \"unit\":\"łyżka\", \"quantity\":4},\n        {\"name\":\"patyczki\", \"comment\":\"kilka sztuk\"}\n     ]\n}"
+		},
+		{
+			"id": "773cce1a-cbf9-f3b1-542b-2f85e04ec296",
+			"headers": "Accept: application/json\n",
+			"url": "{{recipes_url}}/api/recipes/55f6ad252b5ee7955242f7ce",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "recipePhoto",
+					"value": "szaszlyki-a-la-kebab.jpg",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "recipePhotoTitle",
+					"value": "Propozycja podania szaszłyka",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1442242102172,
+			"name": "get recipe by id",
+			"description": "",
+			"collectionId": "b779183d-4ab0-3e4b-5ac6-36376e9bf784",
+			"responses": []
+		},
+		{
+			"id": "8585ccd9-7ff9-4b59-d973-f624d74a0183",
+			"headers": "",
+			"url": "{{recipes_url}}/api/recipes/55f6c228b3122642106c08fc/photos/51b7c60c8714d00b8c162a2605544be3",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "recipePhoto",
+					"value": "",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "recipePhotoTitle",
+					"value": "Propozycja podania szaszłyka",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1442242123633,
+			"name": "get recipe's photo by id",
+			"description": "",
+			"collectionId": "b779183d-4ab0-3e4b-5ac6-36376e9bf784",
+			"responses": []
+		},
+		{
+			"id": "9802eb3d-ec07-95b9-2c6d-0e07fd3bf535",
+			"headers": "",
+			"url": "{{recipes_url}}/api/recipes/55f2d43a33cdf8490d0e6270/photos/2f04a9e213f9708f36ccb8d24f06425b",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [
+				{
+					"key": "recipePhoto",
+					"value": "",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "recipePhotoTitle",
+					"value": "Propozycja podania szaszłyka",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1442242128055,
+			"name": "remove recipe's photo by id",
+			"description": "",
+			"collectionId": "b779183d-4ab0-3e4b-5ac6-36376e9bf784",
+			"responses": []
+		},
+		{
+			"id": "c519b75e-b49d-bbe8-5f60-6ef2f239c903",
+			"headers": "Accept: application/json\n",
+			"url": "{{recipes_url}}/api/ingredients/",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "recipePhoto",
+					"value": "",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "recipePhotoTitle",
+					"value": "Propozycja podania szaszłyka",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1442242132798,
+			"name": "list ingredients",
+			"description": "",
+			"collectionId": "b779183d-4ab0-3e4b-5ac6-36376e9bf784",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK"
+					},
+					"time": 74,
+					"headers": [
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": ""
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "2160",
+							"description": ""
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"description": ""
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Fri, 11 Sep 2015 11:16:09 GMT",
+							"description": ""
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"870-h3P0GzpgTEPuE0ZE0SPfGA\"",
+							"description": ""
+						},
+						{
+							"name": "X-Powered-By",
+							"key": "X-Powered-By",
+							"value": "Express",
+							"description": ""
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "[{\"_id\":\"55f2b79e079195670127205d\",\"title\":\"Szaszłyki a’la kebab\",\"minutes\":20,\"description\":\"Mięso, cebulę i paprykę pokrój w grubą kostkę, a boczek w kostkę 2 cm x 0,5 cm. Fix Knorr (duża saszetka) wymieszaj z olejem i zamarynuj mięso. Kawałki mięsa nakładaj na patyki na przemian z warzywami. Szaszłyki obsmaż na patelni z obu stron a następnie piecz w piekarniku nagrzanym do 240 stopni przez 30 minut. Sos czosnkowy (mała saszetka) wymieszaj z jogurtem. Podawaj z szaszłykami.Moim zdaniem szaszłyki można piec w nieco niższej temperaturze, ale trochę dłużej. Mięso będzie bardziej soczyste. Moja rada jak uzyskać chrupiące warzywa i aromatyczne mięso to marynowanie składników dzień wcześniej i pozostawienie w lodówce do momentu gotowania. Moim kulinarnym zaskoczeniem jest cebula marynowana po prostu w occie winnym. Daje wyjątkowy smak na grillu. Paprykę natomiast warto umieszczać w środku szaszłyka, tak aby mogła przyjąć smak mięsa i przypraw. Koniec i początek szpady szaszłykowej zarezerwujcie dla boczku. Nasz Knorr Fix Kebab z dipem czosnkowym to nieskomplikowany pomysł na nadchodzący sezon grillowy. Musztardę i keczup wszyscy dobrze znamy. Teraz czas na dip czosnkowy. Wspominałem już o polędwiczkach wieprzowych. Może trochę zbyt nadużywane w ostatnich czasach, ale moim zdaniem to bardzo dobre mięso. Chude, miękkie, dobrze komponuje się z wieloma dodatkami. No i, co szczególnie ważne, bardzo łatwe do przygotowania. Na domowy obiad w ciągu tygodnia polecam eskalopki z mozzarellą.\",\"photos\":[],\"ingredients\":[{\"name\":\"mięso wieprzowe\",\"unit\":\"g\",\"quantity\":400,\"comment\":\"np. karkówka\",\"_id\":\"55f2b79e0791956701272064\"},{\"name\":\"Fix Knorr Kebab z dipem czosnkowym\",\"_id\":\"55f2b79e0791956701272063\"},{\"name\":\"boczek wędzony\",\"unit\":\"g\",\"quantity\":200,\"_id\":\"55f2b79e0791956701272062\"},{\"name\":\"papryka\",\"quantity\":1,\"_id\":\"55f2b79e0791956701272061\"},{\"name\":\"cebula\",\"quantity\":2,\"_id\":\"55f2b79e0791956701272060\"},{\"name\":\"olej\",\"unit\":\"łyżka\",\"quantity\":4,\"_id\":\"55f2b79e079195670127205f\"},{\"name\":\"patyczki\",\"comment\":\"kilka sztuk\",\"_id\":\"55f2b79e079195670127205e\"}]}]",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "8314eb50-206f-8a6f-de9e-01f92c3db0c1",
+					"name": "single recipe",
+					"request": "3d2f2493-f9ff-2fa1-c1f5-6260ba9cf218",
+					"collectionId": "b779183d-4ab0-3e4b-5ac6-36376e9bf784",
+					"requestId": "3d2f2493-f9ff-2fa1-c1f5-6260ba9cf218",
+					"collection": "b779183d-4ab0-3e4b-5ac6-36376e9bf784"
+				}
+			]
+		},
+		{
+			"id": "f1446b53-120a-99d3-cfa0-2111146d9def",
+			"headers": "Content-Type: application/json\n",
+			"url": "{{recipes_url}}/api/recipes/",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1442242096673,
+			"name": "add new recipe",
+			"description": "",
+			"collectionId": "b779183d-4ab0-3e4b-5ac6-36376e9bf784",
+			"responses": [],
+			"rawModeData": "{\n    \"title\":\"Szaszłyki a’la kebab\",\n    \"minutes\": \"20\",\n    \"description\":\"Mięso, cebulę i paprykę pokrój w grubą kostkę, a boczek w kostkę 2 cm x 0,5 cm. Fix Knorr (duża saszetka) wymieszaj z olejem i zamarynuj mięso. Kawałki mięsa nakładaj na patyki na przemian z warzywami. Szaszłyki obsmaż na patelni z obu stron a następnie piecz w piekarniku nagrzanym do 240 stopni przez 30 minut. Sos czosnkowy (mała saszetka) wymieszaj z jogurtem. Podawaj z szaszłykami.Moim zdaniem szaszłyki można piec w nieco niższej temperaturze, ale trochę dłużej. Mięso będzie bardziej soczyste. Moja rada jak uzyskać chrupiące warzywa i aromatyczne mięso to marynowanie składników dzień wcześniej i pozostawienie w lodówce do momentu gotowania. Moim kulinarnym zaskoczeniem jest cebula marynowana po prostu w occie winnym. Daje wyjątkowy smak na grillu. Paprykę natomiast warto umieszczać w środku szaszłyka, tak aby mogła przyjąć smak mięsa i przypraw. Koniec i początek szpady szaszłykowej zarezerwujcie dla boczku. Nasz Knorr Fix Kebab z dipem czosnkowym to nieskomplikowany pomysł na nadchodzący sezon grillowy. Musztardę i keczup wszyscy dobrze znamy. Teraz czas na dip czosnkowy. Wspominałem już o polędwiczkach wieprzowych. Może trochę zbyt nadużywane w ostatnich czasach, ale moim zdaniem to bardzo dobre mięso. Chude, miękkie, dobrze komponuje się z wieloma dodatkami. No i, co szczególnie ważne, bardzo łatwe do przygotowania. Na domowy obiad w ciągu tygodnia polecam eskalopki z mozzarellą.\",\n    \"ingredients\":[\n        {\"name\":\"mięso wieprzowe\", \"unit\":\"g\", \"quantity\":400, \"comment\":\"np. karkówka\"},\n        {\"name\":\"Fix Knorr Kebab z dipem czosnkowym\"},\n        {\"name\":\"boczek wędzony\", \"unit\":\"g\", \"quantity\":200},\n        {\"name\":\"papryka\", \"quantity\":1},\n        {\"name\":\"cebula\", \"quantity\":2},\n        {\"name\":\"olej\", \"unit\":\"łyżka\", \"quantity\":4},\n        {\"name\":\"patyczki\", \"comment\":\"kilka sztuk\"}\n     ]\n}"
+		},
+		{
+			"id": "fd025171-2a29-6a06-3e2d-22812a89c65c",
+			"headers": "",
+			"url": "{{recipes_url}}/api/recipes/55f2d43a33cdf8490d0e6270/photos",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "recipePhoto",
+					"value": "",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "recipePhotoTitle",
+					"value": "Propozycja podania szaszłyka",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1442242117304,
+			"name": "upload recipe photo",
+			"description": "",
+			"collectionId": "b779183d-4ab0-3e4b-5ac6-36376e9bf784",
+			"responses": []
+		}
+	]
+}
