@@ -28,7 +28,7 @@ var Api = React.createClass({
 var JsonExample = React.createClass({
   getInitialState: function() {
     return {
-      example: '',
+      jsoncontent: '',
       show: false
     };
   },
@@ -37,7 +37,7 @@ var JsonExample = React.createClass({
     $.get(this.props.src, function(result) {
       if (this.isMounted()) {
         this.setState({
-          example: result,
+          jsoncontent: result,
         });
       }
     }.bind(this));
@@ -48,52 +48,66 @@ var JsonExample = React.createClass({
       <div className="examplejson">
       	<span>{this.props.title}</span> 
       	<span className="showhide" onClick={this.showHide}>{this.state.show?<i className="fa fa-minus-square-o"></i>:<i className="fa fa-plus-square-o"></i>}</span>
-      	<div className={"examplejsoncontent "+(this.state.show?"visible":"hidden")}>{this.renderJson(this.state.example)}</div>
+      	<div className={(this.state.show?"visible":"hidden")}><JsonView source={this.state.jsoncontent}/></div>
   	  </div>
     );
   },
 
   showHide: function(){
   	this.setState({show: !this.state.show});
+  }
+
+});
+
+var JsonView = React.createClass({
+  render: function() {
+    return (<span className="jsonview">{this.renderSource(this.props.source || this.props.children)}</span>);
+  },
+
+  renderSource: function(src){
+    if(typeof src === 'object'){
+        return this.renderJson(src);
+    } else if(typeof src === 'function'){
+        return this.renderJson(src());
+    }
   },
 
   renderJson: function(jsonValue){
     if (Object.prototype.toString.apply(jsonValue) === '[object Array]') {
-    	var elements = this.renderJsonArray(jsonValue);
-    	return <span className="jsonarray">&#x0005B;{elements}&#x0005D;</span>;
+      var elements = this.renderJsonArray(jsonValue);
+      return <span className="jsonarray">&#x0005B;{elements}&#x0005D;</span>;
     } else if(typeof jsonValue === 'object') {
-    	var elements = this.renderJsonObject(jsonValue);
-    	return <span className="jsonobject">&#x0007B;{elements}&#x0007D;</span>;
+      var elements = this.renderJsonObject(jsonValue);
+      return <span className="jsonobject">&#x0007B;{elements}&#x0007D;</span>;
     } else if(typeof jsonValue === 'string') {
-    	return <span>&quot;<span className="jsonstring">{jsonValue}</span>&quot;</span>;
+      return <span>&quot;<span className="jsonstring">{jsonValue}</span>&quot;</span>;
     } else {
-    	return <span className={'json'+(typeof jsonValue)}>{jsonValue}</span>;
+      return <span className={'json'+(typeof jsonValue)}>{jsonValue}</span>;
     }
   },
 
   renderJsonObject: function(jsonObject){
-  	var elements = [];
-  	for(var objType in jsonObject){
-  		elements.push(<span>&quot;<span className="jsonname">{objType}</span>&quot;:{this.renderJson(jsonObject[objType])}</span>);
+    var elements = [];
+    for(var objType in jsonObject){
+      elements.push(<span>&quot;<span className="jsonname">{objType}</span>&quot;:{this.renderJson(jsonObject[objType])}</span>);
     }
     var len = elements.length;
     for (var i = len - 1; i >= 1; i--) {
-    	elements.splice(i,0,",");
+      elements.splice(i,0,",");
     };
     return elements;
   },
 
   renderJsonArray: function(jsonArray){
-  	var elements = [];
-  	for(var objType in jsonArray){
-  		elements.push(this.renderJson(jsonArray[objType]));
-  	}
-  	var len = elements.length;
+    var elements = [];
+    for(var objType in jsonArray){
+      elements.push(this.renderJson(jsonArray[objType]));
+    }
+    var len = elements.length;
     for (var i = len - 1; i >= 1; i--) {
-    	elements.splice(i,0,",");
+      elements.splice(i,0,",");
     };
-  	return elements;
+    return elements;
   }
-
 });
 

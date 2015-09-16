@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Siili Recipes</title>
+    <title>Siili Recipes API</title>
     <link rel="stylesheet" href="fonts.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -21,6 +21,8 @@
         </Api>
         <Api no="2" method="POST" path="/api/recipes">
           Creates new recipe, <span className="prop">title</span> must be unique!
+          <br/>
+          Returns: <JsonView>{{"recipeId":"55f96acdeb10cb6272dc6100"}}</JsonView>
           <JsonExample src="examples/post_recipe_payload.json" title="Example payload:"/>
         </Api>
         <Api no="3" method="GET" path="/api/recipes/{RECIPE_ID}">
@@ -40,7 +42,7 @@
             <li><span className="prop">recipePhoto</span> containing image bytes in jpeg or png format</li>
             <li>(optional) <span className="prop">recipePhotoTitle</span> with image title text</li>
           </ul>
-          New <span className="pathparam">PHOTO_ID</span> can be parsed from returned <span className="prop">Link</span> header.
+          Returns: <JsonView>{{"photoId":"51b7c60c8714d00b8c162a2605544be3"}}</JsonView>
         </Api>
         <Api no="7" method="GET" path="/api/recipes/{RECIPE_ID}/photos/{PHOTO_ID}">
           Gets recipe's photo
