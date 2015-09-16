@@ -31,7 +31,7 @@ router.post('/recipes/:recipeId/photos', upload.single('recipePhoto'), function 
         RecipeService.update(recipeId, recipe)
         .then(
           function(entity){
-            thisRes.status(201).header("Link",'</api/recipes/'+recipeId+'/photos/'+filename+'>; rel="uploaded_image"').send();
+            thisRes.status(201).header("Link",'</api/recipes/'+recipeId+'/photos/'+filename+'>; rel="uploaded_image"').send({"photoId":filename});
           }, U.handleError(thisRes))
         .done();
       }, U.handleError(thisRes));

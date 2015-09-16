@@ -27,7 +27,7 @@ router.post('/recipes/', function(req, res) {
   		RecipeService.store(recipe)
   		.then(
   	      function(entity){
-  	        thisRes.status(201).header("Link",'</api/recipes/'+entity._id+'>; rel="created_item"; media=application/json').send();
+  	        thisRes.status(201).header("Link",'</api/recipes/'+entity._id+'>; rel="created_item"; media=application/json').send({"recipeId":entity._id});
   	      }, U.handleError(thisRes))
   	    .done();
   	}

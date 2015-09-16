@@ -4,151 +4,56 @@
     <title>Siili Recipes</title>
     <link rel="stylesheet" href="fonts.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/jsx;harmony=true" src="components.js"></script>
   </head>
-  <body ng-app="app">
-    <h1>
-        <a href="/" class="logo-svg"><img src="siili_logo.svg"></a>Recipes API
-        <div class="links">
-          <a href="https://www.getpostman.com/collections/a71a45c5b668530f10ce" target="_blank">Postman collection url</a>
-        </div>
-    </h1>
-    <div class="api">
-    Simple REST service providing working API for demo applications written by interviewed front-end developers.
-    </div>
-    <div class="api">
-      <h2><span class="no">A1</span> GET /api/recipes/</h2>
-      <div class="apidesc">Recipes listing, can be used with ?s= query parameter to select resulting object's fields, ex: <span class="link">/api/recipes/?s=title+minutes</span></div>
-      <h2><span class="no">A2</span> POST /api/recipes/</h2>
-      <div class="apidesc">
-        Creates new recipe, <span class="prop">title</span> must be unique!
-        <br><br>
-        Example payload:
-        <div class="pre">
-        {
-            <span class="prop">"title"</span>:"Szaszłyki a’la kebab",
-            <span class="prop">"minutes"</span>: "20",
-            <span class="prop">"description"</span>:"Mięso, cebulę i paprykę pokrój w grubą kostkę, a boczek w kostkę 2 cm x 0,5 cm. Fix Knorr (duża saszetka) wymieszaj z olejem i zamarynuj mięso. Kawałki mięsa nakładaj na patyki na przemian z warzywami. Szaszłyki obsmaż na patelni z obu stron a następnie piecz w piekarniku nagrzanym do 240 stopni przez 30 minut. Sos czosnkowy (mała saszetka) wymieszaj z jogurtem. Podawaj z szaszłykami.Moim zdaniem szaszłyki można piec w nieco niższej temperaturze, ale trochę dłużej. Mięso będzie bardziej soczyste. Moja rada jak uzyskać chrupiące warzywa i aromatyczne mięso to marynowanie składników dzień wcześniej i pozostawienie w lodówce do momentu gotowania. Moim kulinarnym zaskoczeniem jest cebula marynowana po prostu w occie winnym. Daje wyjątkowy smak na grillu. Paprykę natomiast warto umieszczać w środku szaszłyka, tak aby mogła przyjąć smak mięsa i przypraw. Koniec i początek szpady szaszłykowej zarezerwujcie dla boczku. Nasz Knorr Fix Kebab z dipem czosnkowym to nieskomplikowany pomysł na nadchodzący sezon grillowy. Musztardę i keczup wszyscy dobrze znamy. Teraz czas na dip czosnkowy. Wspominałem już o polędwiczkach wieprzowych. Może trochę zbyt nadużywane w ostatnich czasach, ale moim zdaniem to bardzo dobre mięso. Chude, miękkie, dobrze komponuje się z wieloma dodatkami. No i, co szczególnie ważne, bardzo łatwe do przygotowania. Na domowy obiad w ciągu tygodnia polecam eskalopki z mozzarellą.",
-            <span class="prop">"ingredients"</span>:[
-                {<span class="prop">"name"</span>:"mięso wieprzowe", <span class="prop">"unit"</span>:"g", <span class="prop">"quantity"</span>:400, <span class="prop">"comment"</span>:"np. karkówka"},
-                {<span class="prop">"name"</span>:"Fix Knorr Kebab z dipem czosnkowym"},
-                {<span class="prop">"name"</span>:"boczek wędzony", <span class="prop">"unit"</span>:"g", <span class="prop">"quantity"</span>:200},
-                {<span class="prop">"name"</span>:"papryka", <span class="prop">"quantity"</span>:1},
-                {<span class="prop">"name"</span>:"cebula", <span class="prop">"quantity"</span>:2},
-                {<span class="prop">"name"</span>:"olej", <span class="prop">"unit"</span>:"łyżka", <span class="prop">"quantity"</span>:4},
-                {<span class="prop">"name"</span>:"patyczki", <span class="prop">"comment"</span>:"kilka sztuk"}
-             ]
-        }
-        </div>
-        Returns: <span class="success">201 Created</span> when success or <span class="failure">400 Bad Request</span> when recipe invalid or non-unique
-        <br>
-        New <span class="pathparam">RECIPE_ID</span> can be parsed from returned <span class="prop">Link</span> header.
-      </div>
-      <h2><span class="no">A3</span> GET /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
-      <div class="apidesc">
-      Gets recipe by its unique id
-      <br><br>
-      Example response:
-      <div class="pre">
-        {
-            <span class="prop">"_id"</span>: "55f6c228b3122642106c08fc",
-            <span class="prop">"title"</span>: "Szaszłyki a’la kebab",
-            <span class="prop">"minutes"</span>: 20,
-            <span class="prop">"description"</span>: "Mięso, cebulę i paprykę pokrój w grubą kostkę, a boczek w kostkę 2 cm x 0,5 cm. Fix Knorr (duża saszetka) wymieszaj z olejem i zamarynuj mięso. Kawałki mięsa nakładaj na patyki na przemian z warzywami. Szaszłyki obsmaż na patelni z obu stron a następnie piecz w piekarniku nagrzanym do 240 stopni przez 30 minut. Sos czosnkowy (mała saszetka) wymieszaj z jogurtem. Podawaj z szaszłykami.Moim zdaniem szaszłyki można piec w nieco niższej temperaturze, ale trochę dłużej. Mięso będzie bardziej soczyste. Moja rada jak uzyskać chrupiące warzywa i aromatyczne mięso to marynowanie składników dzień wcześniej i pozostawienie w lodówce do momentu gotowania. Moim kulinarnym zaskoczeniem jest cebula marynowana po prostu w occie winnym. Daje wyjątkowy smak na grillu. Paprykę natomiast warto umieszczać w środku szaszłyka, tak aby mogła przyjąć smak mięsa i przypraw. Koniec i początek szpady szaszłykowej zarezerwujcie dla boczku. Nasz Knorr Fix Kebab z dipem czosnkowym to nieskomplikowany pomysł na nadchodzący sezon grillowy. Musztardę i keczup wszyscy dobrze znamy. Teraz czas na dip czosnkowy. Wspominałem już o polędwiczkach wieprzowych. Może trochę zbyt nadużywane w ostatnich czasach, ale moim zdaniem to bardzo dobre mięso. Chude, miękkie, dobrze komponuje się z wieloma dodatkami. No i, co szczególnie ważne, bardzo łatwe do przygotowania. Na domowy obiad w ciągu tygodnia polecam eskalopki z mozzarellą.",
-            <span class="prop">"tags"</span>: [],
-            <span class="prop">"photos"</span>: [
-              {
-                <span class="prop">"photoId"</span>: "51b7c60c8714d00b8c162a2605544be3",
-                <span class="prop">"title"</span>: "Propozycja podania szaszłyka",
-                <span class="prop">"type"</span>: "image/jpeg",
-                <span class="prop">"size"</span>: 248032
-              },
-              {
-                <span class="prop">"photoId"</span>: "21218576ae0610ed3ea1787cca87d025",
-                <span class="prop">"title"</span>: "Propozycja podania szaszłyka",
-                <span class="prop">"type"</span>: "image/jpeg",
-                <span class="prop">"size"</span>: 248032
-              },
-              {
-                <span class="prop">"photoId"</span>: "abfafc7ebdad5f5e3a86e37e1124f75c",
-                <span class="prop">"title"</span>: "Propozycja podania szaszłyka",
-                <span class="prop">"type"</span>: 248032
-              }
-            ],
-            <span class="prop">"ingredients"</span>: [
-              {
-                <span class="prop">"name"</span>: "mięso wieprzowe",
-                <span class="prop">"unit"</span>: "g",
-                <span class="prop">"quantity"</span>: 400,
-                <span class="prop">"comment"</span>: "np. karkówka"
-              },
-              {
-                <span class="prop">"name"</span>: "Fix Knorr Kebab z dipem czosnkowym"
-              },
-              {
-                <span class="prop">"name"</span>: "boczek wędzony",
-                <span class="prop">"unit"</span>: "g",
-                <span class="prop">"quantity"</span>: 200
-              },
-              {
-                <span class="prop">"name"</span>: "papryka",
-                <span class="prop">"quantity"</span>: 1
-              },
-              {
-                <span class="prop">"name"</span>: "cebula",
-                <span class="prop">"quantity"</span>: 2
-              },
-              {
-                <span class="prop">"name"</span>: "olej",
-                <span class="prop">"unit"</span>: "łyżka",
-                <span class="prop">"quantity"</span>: 4
-              },
-              {
-                <span class="prop">"name"</span>: "patyczki",
-                <span class="prop">"comment"</span>: "kilka sztuk"
-              }
-            ]
-        }
-      </div>
-      </div>
-      <h2><span class="no">A4</span> PUT /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
-      <div class="apidesc">Updates recipe by id</div>
-      <h2><span class="no">A5</span> DELETE /api/recipes/<span class="pathparam">{RECIPE_ID}</span></h2>
-      <div class="apidesc">Removes recipe by id</div>
-    </div>
-    <div class="api">
-      <h2><span class="no">B1</span> POST /api/recipes/<span class="pathparam">{RECIPE_ID}</span>/photos</h2>
-      <div class="apidesc">
-        Uploads new photo for recipe. 
-        Expects content type 'multipart/form-data' and 2 body parts: 
-        <ul>
-        <li><span class="prop">recipePhoto</span> containing image bytes in jpeg or png format
-        <li>(optional) <span class="prop">recipePhotoTitle</span> with image title text
-        </ul>
-        <br>
-        New <span class="pathparam">PHOTO_ID</span> can be parsed from returned <span class="prop">Link</span> header.
-      </div>
-      <h2><span class="no">B2</span> GET /api/recipes/<span class="pathparam">{RECIPE_ID}</span>/photos/<span class="pathparam">{PHOTO_ID}</span></h2>
-      <div class="apidesc">Gets recipe's photo</div>
-      <h2><span class="no">B3</span> DELETE /api/recipes/<span class="pathparam">{RECIPE_ID}</span>/photos/<span class="pathparam">{PHOTO_ID}</span></h2>
-      <div class="apidesc">Removes photo from recipe</div>
-    </div>
-    <div class="api">
-      <h2><span class="no">C1</span> GET /api/ingredients/</h2>
-      <div class="apidesc">
-        Lists all unique ingredients an theirs possible units.
-        <br><br>
-        Example response:
-        <div class="pre">
-[
-  {<span class="prop">"name"</span>:"mięso wieprzowe",<span class="prop">"units"</span>:["g"]},
-  {<span class="prop">"name"</span>:"olej",<span class="prop">"units"</span>:["łyżka"]},
-  {<span class="prop">"name"</span>:"papryka",<span class="prop">"units"</span>:["pcs."]},
-  {<span class="prop">"name"</span>:"Fix Knorr Kebab z dipem czosnkowym",<span class="prop">"units"</span>:["pcs."]},
-  {<span class="prop">"name"</span>:"cebula",<span class="prop">"units"</span>:["pcs."]},
-  {<span class="prop">"name"</span>:"boczek wędzony",<span class="prop">"units"</span>:["g"]},
-  {<span class="prop">"name"</span>:"patyczki",<span class="prop">"units"</span>:["pcs."]}
-]</div>
-      </div>
-    </div>
+  <body>
+    <div id="content"></div>
+    <script type="text/jsx">
+      var content = 
+      <div>
+        <RecipeAPIHeader/>
+        <Api no="1" method="GET" path="/api/recipes">
+          Recipes listing, can be used with ?s= query parameter to select resulting object's fields, ex: <span className="link">/api/recipes/?s=title+minutes</span>
+        </Api>
+        <Api no="2" method="POST" path="/api/recipes">
+          Creates new recipe, <span className="prop">title</span> must be unique!
+          <JsonExample src="examples/post_recipe_payload.json" title="Example payload:"/>
+        </Api>
+        <Api no="3" method="GET" path="/api/recipes/{RECIPE_ID}">
+          Gets recipe by its unique id
+          <JsonExample src="examples/get_recipe_by_id_response.json" title="Example response:"/>
+        </Api>
+        <Api no="4" method="PUT" path="/api/recipes/{RECIPE_ID}">
+          Updates recipe by id
+        </Api>
+        <Api no="5" method="DELETE" path="/api/recipes/{RECIPE_ID}">
+          Removes recipe by id
+        </Api>
+        <Api no="6" method="POST" path="/api/recipes/{RECIPE_ID}/photos">
+          Uploads new photo for recipe. 
+          Expects content type 'multipart/form-data' and 2 body parts: 
+          <ul>
+            <li><span className="prop">recipePhoto</span> containing image bytes in jpeg or png format</li>
+            <li>(optional) <span className="prop">recipePhotoTitle</span> with image title text</li>
+          </ul>
+          New <span className="pathparam">PHOTO_ID</span> can be parsed from returned <span className="prop">Link</span> header.
+        </Api>
+        <Api no="7" method="GET" path="/api/recipes/{RECIPE_ID}/photos/{PHOTO_ID}">
+          Gets recipe's photo
+        </Api>
+        <Api no="8" method="DELETE" path="/api/recipes/{RECIPE_ID}/photos/{PHOTO_ID}">
+          Removes photo from recipe
+        </Api>
+        <Api no="9" method="GET" path="/api/ingredients/">
+           Lists all unique ingredients an theirs possible units.
+           <JsonExample src="examples/get_ingredients_response.json" title="Example response:"/>
+        </Api>
+      </div>;
+      React.render(content, document.getElementById('content'));
+    </script>
   </body>
 </html>

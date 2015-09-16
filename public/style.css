@@ -11,16 +11,64 @@ a {
 	color: blue;
 }
 
+.visible {
+	display: block;
+}
+
+.hidden {
+	display: none;
+}
+
+.showhide {
+	color: orange;
+	display: inline-block;
+	padding: 0 0.3rem;
+	text-decoration: underline;
+	font-size: 90%;
+}
+
 .pre {
 	width: 90%;
 	white-space: pre-wrap;
-	color: darkGray;
+	color: gray;
 	font-family: monospace;
 }
 
-.prop {
-	color: blue;
+.examplejson {
+	margin: 0.2rem 0 0 0;
+}
+
+.examplejsoncontent {
+	padding: 0.2rem 0 0 0;
+	width: 90%;
+	color: #ff5009;
 	font-family: monospace;
+}
+
+.prop, .jsonname {
+	color: blue;
+}
+
+.jsonstring {
+	color: rgb(150,150,150);
+}
+
+.jsonnumber {
+	color: rgb(100,100,100);
+}
+
+.jsonboolean {
+	color: rgb(70,70,70);
+}
+
+.jsonobject, .jsonarray {
+	padding-left: 0.3rem;
+}
+
+.jsonobject:before {
+	content: " ";
+	display: block;
+	width: 1rem;
 }
 
 h1 {
@@ -29,17 +77,44 @@ h1 {
 }
 
 h2 {
-	margin-bottom: 0.3rem;
+	margin: 0.3rem 0;
 }
 
 h2 .no {
+	display: inline-block;
+	width:1rem;
 	font-size: 75%;
-	color: #ff5009;
+	color: lightGray;
+}
+
+.method {
+	display: inline-block;
+	width: 3.8rem;
+	font-weight: normal;
+	font-size: 75%;
+	padding: 0 0.1rem;
+}
+
+.GET {
+	color: green!important;
+} 
+
+.POST {
+	color: magenta!important;
+}
+
+.PUT {
+	color: blue!important;
+}
+
+.DELETE {
+	color: red!important;
 }
 
 .pathparam {
-	color: darkGray;
+	color: rgb(100,100,100);
 	font-weight: normal;
+	font-size: 90%;
 }
 
 .link {
@@ -48,13 +123,13 @@ h2 .no {
 }
 
 .api {
-	padding: 0 1rem;
+	padding: 0 2rem;
 }
 
 .apidesc {
-	padding: 0 0 1rem 1.7rem;
+	padding: 0 0 0.5rem 5.3rem;
 	font-size: 0.9rem;
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 	border-bottom: solid 1pt #ececec;
 }
 
